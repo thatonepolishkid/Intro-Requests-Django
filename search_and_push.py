@@ -1,7 +1,7 @@
 # Importing necessary modules.
 import requests, os
 
-folder = (r'C:\Users\Marcin Malek\Desktop\testing\tests')
+folder = (r'Insert absolute path here.')
 os.chdir(folder)
 
 #Url needs to be replaced with the external IP address from the lab.
@@ -36,12 +36,9 @@ for file in os.listdir(folder):
     list_of_dicts_to_push.append(format_dict)
 
 
-print(list_of_dicts_to_push)
-
-
 for dictionary in list_of_dicts_to_push:
     # Replace 'http://<corpweb-external-IP>/feedback' with the website you are trying to push to.
-    response = requests.post(url, params=dictionary)
+    response = requests.post(url, json=dictionary)
     if response.ok:
         print("Response has been received")
     if not response.ok:
