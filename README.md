@@ -16,5 +16,6 @@ with open('textfile.txt') as file:
     name = line[1]
     date = line[2]
     feedback = line[3]
-  #not sure if i need to use this or just send the push request yet
-  Instantiate a list  that will hold these dictionaries, use the json.load()
+#not sure if i need to use this or just send the push request yet
+Instantiate a list 'p' that will hold these dictionaries, use the json.load() and use requests.post('Website.name', params=p)
+on the list to upload it to the website. Then use 
