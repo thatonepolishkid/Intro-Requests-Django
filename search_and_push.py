@@ -1,5 +1,4 @@
-"""This file is going to be left blank for quick checks on code to make sure they are working in a Vacuum."""
-
+# Importing necessary modules.
 import requests, os
 
 folder = (r'Absolute path goes here')
