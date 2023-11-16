@@ -4,6 +4,9 @@ import requests, os
 folder = (r'Absolute path goes here')
 os.chdir(folder)
 
+#Url needs to be replaced with the external IP address from the lab.
+url = 'http://<corpweb-external-IP>/feedback'
+
 # Instantiating the necessarry lists and dictionaries.
 list_of_dicts_to_push = []
 title = {}
@@ -32,7 +35,13 @@ for file in os.listdir(folder):
     format_dict.update(feedback)
     list_of_dicts_to_push.append(format_dict)
 
-for dictionary in list_of_dicts_to_push:
-    # Replace 'www.somewebsite.com' with the website you are trying to push to.
-    requests.post("www.somewebsite.com", param=dict)
-    
+
+
+response = requests.get(url)
+
+if response.ok:
+    for dictionary in list_of_dicts_to_push:
+        # Replace 'http://<corpweb-external-IP>/feedback' with the website you are trying to push to.
+        requests.post("http://<corpweb-external-IP>/feedback", param=dictionary)
+        if not response.ok:
+            raise Exception("Get failed with status code {}".format(response.status_code))
