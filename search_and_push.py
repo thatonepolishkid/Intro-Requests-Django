@@ -5,7 +5,7 @@ folder = (r'Insert absolute path here.')
 os.chdir(folder)
 
 #Url needs to be replaced with the external IP address from the lab.
-url = 'http://35.185.118.147/feedback/'
+url = 'http://local-host-IP/feedback/'
 
 # Instantiating the necessarry lists and dictionaries.
 list_of_dicts_to_push = []
